@@ -46,14 +46,14 @@
 					<p>
 						<small>Created by:</small><br>
 
-						<small>Hugo A. B. Djemaa - RA 181596| Gabriel Caê C. Bounous - RA 181493 </small>
+						<small>Hugo A. B. Djemaa - RA 181596 | Gabriel Caê C. Bounous - RA 181493 </small>
 
 					</p>
 				</section>
 
 				<section data-background="#4C1130">
 					<p>
-						Com uma média de 190 amigos por adulto no Facebook¹, calcular os amigos em comum a cada entrada na pagina pricipal de alguém acaba ficando pesado. Decidimos usar a arquitetura MapReduce para simular um pré-calculo afim de diminuir o tempo de processamento.
+						Com uma média de 190 amigos por adulto no Facebook, calcular os amigos em comum a cada entrada na pagina pricipal de alguém acaba ficando pesado. Decidimos usar a arquitetura MapReduce para simular um pré-calculo afim de diminuir o tempo de processamento.
 					</p>
 				</section>
 
@@ -99,20 +99,21 @@
 						<a href="#" class="navigate-down"></a>
 					</section>
 					<section data-background="#45818E">
-						<p> Temos um arquivo texto de entretrada e para cada linha (representando um usuario e seus amigos) criamos pares <strong>< chave, valor ></strong> </p>
+						<p> Temos um arquivo texto de entretrada e para cada linha (representando um usuário e seus amigos) criamos pares<br> <strong> < chave, valor ></strong> </p>
 						<br>
-						<p class="fragment"> <strong>Chave</strong>: tupla formada pelo usuario e um de seus amigos.</p>
-						<p class="fragment"> <strong>Valor</strong>: lista de amigos desse usuario.</p>
+						<p class="fragment"> <strong>Chave</strong>: tupla formada pelo usuário e um de seus amigos.</p>
+						<p class="fragment"> <strong>Valor</strong>: lista de amigos desse usuário.</p>
 					</section>	
 					<section data-background="#76A5AF">
 						<h5>exemplo</h5>
 						<div style="float:left; width:50%">
-							<p class="fragment"><strong>1 => 2 3 4</strong></p>
+							<p class="fragment"><strong>1 => 2 3 4 6</strong></p>
 							<br>
 							<p class="fragment"> 
 								< (1,2) , [2,3,4,6] > <br>
 								< (1,3) , [2,3,4,6] > <br>
-								< (1,4) , [2,3,4,6] > 
+								< (1,4) , [2,3,4,6] > <br>
+								< (1,6) , [2,3,4,6] >
 							</p>
 						</div>
 						<div style="float:right; width:50%">
@@ -125,6 +126,7 @@
 						</div>
 					</section>
 					<section data-background="#A2C4C9" data-transition="slide">
+						<h5>Código</h5>
 						<pre><code class="hljs" data-trim contenteditable>
 def Map(linhas):
 	current = multiprocessing.current_process()
@@ -148,7 +150,7 @@ def Map(linhas):
 						<a href="#" class="navigate-down"></a>
 					</section>
 					<section data-background="#6AA84F">
-						<p> Para o agrupamento mudamos as o <i>valor</i> das tuplas, agora sendo duas listas ( a lista de (A,B) com a lista de (B,A)) </p>
+						<p> Para o agrupamento mudamos as o <i>valor</i> das tuplas com a mesma <i>chave</i>, agora sendo duas listas ( a lista de (A,B) com a lista de (B,A)) </p>
 					</section>	
 					<section data-background="#93C47D">
 						<h5>exemplo</h5>
@@ -167,6 +169,7 @@ def Map(linhas):
 							<div><h5 class="fragment">< (1,2), ([2,3,4,6] , [1,3]) ></h5></div>
 					</section>
 					<section data-background="#B6D7A8">
+						<h5>Código</h5>
 						<pre><code class="hljs" data-trim contenteditable>
 def Group(resultados):
     dictionario = dict()
@@ -198,6 +201,7 @@ def Group(resultados):
 									< (1,2) , ([2,3,4,6], [1,3]) > <br>
 									< (1,3) , ([2,3,4,6], [1,2,5]) > <br>
 									< (1,4) , ([2,3,4,6], [1,5,6]) > <br>
+									< (1,6) , ([2,3,4,6], [1,4,5]) > <br>
 									< (2,3) , ([1,3], [1,2,5]) > <br>
 									< (3,5) , ([1,2,5], [3,4,6]) > <br>
 									< (4,5) , ([1,5,6], [3,4,6]) > <br>
@@ -210,6 +214,7 @@ def Group(resultados):
 									< (1,2) , [3] ><br>
 									< (1,3) , [2] > <br>
 									< (1,4) , [6] > <br>
+									< (1,6) , [4] > <br>
 									< (2,3) , [1] > <br>
 									< (3,5) , [] > <br>
 									< (4,5) , [6] > <br>
@@ -220,8 +225,8 @@ def Group(resultados):
 							<br>
 					</section>
 					<section data-background="#FFE599">
-						<h2>Codigo</h2>
-												<pre><code class="hljs" data-trim contenteditable>
+						<h5>Código</h5>
+						<pre><code class="hljs" data-trim contenteditable>
 def Reduce(dictionario):
 	current = multiprocessing.current_process()
 	#print dictionario.items()"
