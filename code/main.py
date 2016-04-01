@@ -28,9 +28,8 @@ def main():
     listDictWrite(result)
     end = timer()
     print "Total time : "+str(end-start)
-    print "Map time1 : "+str(interPostMap-interPreMap)
-    print "Map time2 : "+str(interPreReduce-interPreMap)
-    print "Reduce time1 : "+str(interPostReduce-interPreReduce)
+    print "Map time : "+str(interPostMap-interPreMap)
+    print "Reduce time : "+str(interPostReduce-interPreReduce)
 
 if __name__ == '__main__':
     main()
