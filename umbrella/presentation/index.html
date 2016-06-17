@@ -41,8 +41,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Nonblocking HDFS Access </h1>
-					<i><h4>HDFS-9924</h4></i>
+					<h1>[HDFS-9924]</h1>
+					<i><h2>Nonblocking HDFS Access</h2></i>
 					<p>
 						<small>Created by:</small><br>
 
@@ -51,138 +51,177 @@
 					</p>
 				</section>
 
-				<section data-background="#4C1130">
-					<p>
-						Depois da votaçao do impeachment na Camera ha pouco tempo e todos os escandalos de corrupçao que estao no ar, tentamos criar uma ferramenta para vermos a politica de hoje de uma forma mais clara.
-					</p>
-				</section>
-
 				<section>
-					<section data-background="#073763">
-						<h2>Formatação de dados</h2>
-						<h3>Três listas</h3>
+					<section data-background="#4C1130">
+						<h2>HDSF</h2>
+						<h3>Hadoop Distributed File System</h3>
 						<a href="#" class="navigate-down"></a>
 					</section>
 
-					<section data-background="#3D85C6">
-						
-						<div style="width: 100%; padding-top: 10%;">
-								<h3>Datas HTML</h3>	
-								<ul>			
-								<li><a href="http://m.congressoemfoco.uol.com.br/noticias/lista-da-odebrecht-os-politicos-e-seus-respectivos-partidos" >Odebrecht</a></li>
-								<li><a href="http://www.contracorrupcao.org/2013/04/lista-da-corrupcao.html?m=1" >Condenados e Acusados</a></li>
-								<li><a href="http://infograficos.oglobo.globo.com/brasil/politicos-lava-jato.html" >Lava Jato</a></li>
-								</ul>
-													
-							</div>
-					</section>
-					<section data-background="#3D85C6">
-							<div style="float:right; width:50%">
-								<h3>Datas CSV</h3>	
-								<a href="https://raw.githubusercontent.com/amaboura/panama-papers-dataset-2016/master/pt.csv" >Panama Papers</a>
-						</div>
+					<section data-background="#7F174F">
+						<h3>Arquitetura</h3>
+						<img class="fragment" src="./hdfs.gif">								
 						<a href="#/2"></a>
 					</section>				
 				</section>
 
 				<section>
+					<section data-background="#073763">
+						<h2> HDFS-9924 </h2>
+						<h4>O que? Porque?</h4>
+						<img class="fragment" style="height: 100%;" src="./hdfs9924.png">
+					</section>		
+				</section>
+
+				<section>
 					<section data-background="#0C343D">
-						<h2>Saida</h2>
-						<pre><code class="hljs" data-trim contenteditable>
-						Nome,lavaJato,panamaPapers,odebrecht,acusadosCondenados
-EDUARDO CUNHA,1,1,1,0
-CARLOS ALBERTO LEREIA,0,0,0,1
-DUDU   RONALSA,0,0,1,0
-MAMADIE TOURe,0,1,0,0
-TARCISIO   ZIMMERMANN,0,0,1,0
-JEFERSON   ANDRADE,0,0,1,0
-LUIZ GUSHIKEN,0,0,0,1
-FREDERICO   ANTUNES,0,0,1,0
-DARCY   VERA,0,0,1,0
-
-					</code></pre>
-
+						<h2>Função Map</h2>
+						<a href="#" class="navigate-down"></a>
+					</section>
+					<section data-background="#45818E">
+						<p> Temos um arquivo texto de entrada e para cada linha (representando um usuário e seus amigos) criamos pares<br> <strong> < chave, valor ></strong> </p>
+						<br>
+						<p class="fragment"> <strong>Chave</strong>: tupla formada pelo usuário e um de seus amigos.</p>
+						<p class="fragment"> <strong>Valor</strong>: lista de amigos desse usuário.</p>
+					</section>	
+					<section data-background="#76A5AF">
+						<h5>exemplo</h5>
+						<div style="float:left; width:50%">
+							<p class="fragment"><strong>1 => 2 3 4 6</strong></p>
+							<br>
+							<p class="fragment"> 
+								< (1,2) , [2,3,4,6] > <br>
+								< (1,3) , [2,3,4,6] > <br>
+								< (1,4) , [2,3,4,6] > <br>
+								< (1,6) , [2,3,4,6] >
+							</p>
+						</div>
+						<div style="float:right; width:50%">
+							<p class="fragment"><strong>2 => 1 3</strong></p>
+							<br>
+							<p class="fragment"> 
+								< (1,2) , [1,3] > <br>
+								< (2,3) , [1,3] >  
+							</p>
+						</div>
 					</section>
 					<section data-background="#A2C4C9" data-transition="slide">
-						<h5>Recuperar uma pessoa no twitter</h5>
+						<h5>Código</h5>
 						<pre><code class="hljs" data-trim contenteditable>
-def getTwitterUser(query):
-
-	users = OAuth.api.search_users(query)
-	if len(users) > 0:
-		# printTwitterUserJson(users[0]._json)
-		return users[0]._json
-	else:
-		return -1
-
+def Map(linhas):
+	current = multiprocessing.current_process()
+	retorno = dict()
+	for linha in linhas:
+		part = linha.split("=>")
+		base = part[0].strip()
+		listaDeAmigos = part[1].split()
+		for amigo in listaDeAmigos:
+			retorno[(min(base,amigo),max(base,amigo))] = setWithoutHim(listaDeAmigos,amigo)
+	print 'ending mapper n°:', current.name, current._identity
+	return retorno					
 					</code></pre>
 						<a href="#/3"></a>
-					</section>			
-					<section data-background="#A2C4C9" data-transition="slide">
-						<h5>Recuperar os Amigos no twitter</h5>
-						<pre><code class="hljs" data-trim contenteditable>
-def getTwitterUsersFriends(user_id):
+					</section>				
+				</section>
 
-	lista_amigos = OAuth.api.friends_ids(user_id)
-	return lista_amigos		
-
-					</code></pre>
-						<a href="#/3"></a>
+				<section>
+					<section data-background="#274E13">
+						<h2>Função <b>Agrupamento</b></h2>
+						<a href="#" class="navigate-down"></a>
 					</section>
-					<section data-background="#0C343D">
-						<h2>Nova Saida</h2>
+					<section data-background="#6AA84F">
+						<p> Para o agrupamento mudamos as o <i>valor</i> das tuplas com a mesma <i>chave</i>, agora sendo duas listas ( a lista de (A,B) com a lista de (B,A)) </p>
+					</section>	
+					<section data-background="#93C47D">
+						<h5>exemplo</h5>
+						<br>
+							<div style="float:left; width:50%">
+								<p class="fragment">
+									< (1,2) , [2,3,4,6] >
+								</p>
+							</div>
+							<div style="float:right; width:50%">
+								<p class="fragment">
+									< (1,2) , [1,3] > 
+								</p>
+							</div>
+							<br>
+							<div><h5 class="fragment">< (1,2), ([2,3,4,6] , [1,3]) ></h5></div>
+					</section>
+					<section data-background="#B6D7A8">
+						<h5>Código</h5>
 						<pre><code class="hljs" data-trim contenteditable>
-						Nome,id,lavaJato,panamaPapers,odebrecht,acusadosCondenados,listaDeAmigos
-EDUARDO CUNHA,15161,1,1,1,0, []
-CARLOS ALBERTO LEREIA,351315131,0,0,0,1, []
-DUDU   RONALSA,1263515131,0,0,1,0 []
-
-
-					</code></pre>
-
-					</section> 		
-						
+def Group(resultados):
+    dictionario = dict()
+    for linha in resultados:
+        for key, value in linha.items():
+            if not key in dictionario:
+                dictionario[key]=[value]
+            else:
+                dictionario[key]+= [value]
+    return dictionario
+						</code></pre>
+						<a href="#/2"></a>
+					</section>		
 				</section>
 
 				<section>
 					<section data-background="#7F6000">
-						<h2>MapReduce with spark</b></h2>
-							<pre><code class="hljs" data-trim contenteditable>
-							def run(sc):
-	corrupted = sc.textFile("dataset/parser/corrupcao.csv").map(split).map(parseAll)
-	listCorrupt = dict(sc.textFile("dataset/parser/corrupcao.csv").map(split).map(parse2).collect())
-	coef  = corrupted.map(lambda f : makeTuple(f,listCorrupt)).collect()
-	result = dict()
-
-def makeTuple(corrupt, listCorrupt):
-    if corrupt is not None:
-        return corrupt.id, coefficient(corrupt,listCorrupt)
-					</code></pre>
+						<h2>Função <b>Reduce</b></h2>
+						<a href="#" class="navigate-down"></a>
+					</section>
+					<section data-background="#F1C232">
+						<p> Recebemos o dicionario e tratamos cada item, guardamos a <i>chave</i> e fazemos a intersecção das listas que compõem o <i>valor</i>. Retornando uma amizade e seus amigos em comum</p>
 					</section>	
-					<section data-background="#7F6000">
-						<h2>O coefficiente de corrupçao</b></h2>
-							<pre><code class="hljs" data-trim contenteditable>
-def coefficient(corrupt, listCorrupt):
-    coefficient1 = 300
-    coefficient2 = 20
-    coefficient3 = 50
-    numero =0
-    corruption = corrupt.numberList * coefficient1
-    value = corrupt.numberList * 300
-    for amigo in corrupt.listaDeAmigos:
-        if amigo in listCorrupt:
-            corruption+= listCorrupt[amigo]*coefficient2
-            numero += 1
-    if len(corrupt.listaDeAmigos) > 0:
-        coefficient = float(numero)/float(len(corrupt.listaDeAmigos))*100
-    else:
-        coefficient = 0
-    corruption += coefficient*coefficient3
-    return {"nome":corrupt.Nome,"lavaJato":corrupt.lavaJato,"panamaPapers":corrupt.panamaPapers,"odebrecht":corrupt.odebrecht,"acusadosCondenados":corrupt.acusadosCondenados,"numberList":corrupt.numberList,"numeroAmigos":len(corrupt.listaDeAmigos),"numeroAmigosSujos":numero,"coefficientAmigosSujos":coefficient,"coefficientCorruption":corruption}
-
-					</code></pre>
-					</section>	
-					
+					<section data-background="#FFD966">
+						<h5>exemplo</h5>
+						<br>
+							<div style="float:left; width:50%;">
+								<p class="fragment" style="text-align: left;">
+									< (1,2) , ([2,3,4,6], [1,3]) > <br>
+									< (1,3) , ([2,3,4,6], [1,2,5]) > <br>
+									< (1,4) , ([2,3,4,6], [1,5,6]) > <br>
+									< (1,6) , ([2,3,4,6], [1,4,5]) > <br>
+									< (2,3) , ([1,3], [1,2,5]) > <br>
+									< (3,5) , ([1,2,5], [3,4,6]) > <br>
+									< (4,5) , ([1,5,6], [3,4,6]) > <br>
+									< (4,6) , ([1,5,6], [1,4,5]) > <br>
+									< (5,6) , ([3,4,6], [1,4,5]) > <br>
+								</p>
+							</div>
+							<div style="float:right; width:30%;">
+								<p class="fragment" style="text-align: left;" >
+									< (1,2) , [3] ><br>
+									< (1,3) , [2] > <br>
+									< (1,4) , [6] > <br>
+									< (1,6) , [4] > <br>
+									< (2,3) , [1] > <br>
+									< (3,5) , [] > <br>
+									< (4,5) , [6] > <br>
+									< (4,6) , [1,5] > <br>
+									< (5,6) , [4] > <br>
+								</p>
+							</div>
+							<br>
+					</section>
+					<section data-background="#FFE599">
+						<h5>Código</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+def Reduce(dictionario):
+	current = multiprocessing.current_process()
+	#print dictionario.items()"
+	for key,value in dictionario.items():
+		if len(value)>1:
+			dictionario[key]=value[0]&value[1]
+		elif len(value) == 1:
+			dictionario[key]=value[0]
+		else:
+			dictionario[key]={}
+	print 'ending mapper n°:', current.name, current._identity
+	return dictionario
+						</code></pre>
+						<a href="#/3"></a>
+					</section>				
 				</section>
 
 				<section data-background="#783F04">
@@ -191,9 +230,11 @@ def coefficient(corrupt, listCorrupt):
 
 				<section data-background="#660000">
 					<ul>
-						<li><a href="https://github.com/gcbounous/corrupcao_spark">https://github.com/gcbounous/corrupcao_spark</a></li>
-						<li><a href="http://spark.apache.org/">SPARK</a></li>
-						<li><a href="https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python">https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python</a></li>
+						<li><a href="https://github.com/1001prez/MC855">https://github.com/1001prez/MC855</a></li>
+						<li><a href="https://www.facebook.com/notes/facebook-data-science/anatomy-of-facebook/10150388519243859/">https://www.facebook.com/notes/facebook-data-science/anatomy-of-facebook/10150388519243859/</a></li>
+						<li><a href="http://stevekrenzel.com/finding-friends-with-mapreduce">http://stevekrenzel.com/finding-friends-with-mapreduce</a></li>
+						<li><a href="https://docs.python.org/2/library/multiprocessing.html">https://docs.python.org/2/library/multiprocessing.html</a></li>
+						<li><a href="https://snap.stanford.edu/data/egonets-Facebook.html">https://snap.stanford.edu/data/egonets-Facebook.html</a></li>
 					</ul>
 				</section>
 
