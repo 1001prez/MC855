@@ -69,347 +69,213 @@
 					<section data-background="#073763">
 						<h2> HDFS-9924 </h2>
 						<h4>O que? Porque?</h4>
+						<a href="#" class="navigate-down"></a>
+					</section>					
+					<section data-background="#073763">
+						<ul class="fragment">
+							<li class="fragment">Criado por: Tsz Wo Nicholas Sze</li>
+							<li class="fragment">Assigned to: Xiaobing Zhou </li>
+							<img class="fragment" src="./21e344f.jpg">	
+						</ul>
+					</section>
+					<section data-background="#073763">
 						<img class="fragment" style="height: 100%;" src="./hdfs9924.png">
-					</section>		
+					</section>
+					<section data-background="#073763">
+						<h3>Future e asincronismo</h3>
+						<h4>Util quando tem muitas chamadas</h4>
+						<p>java.util.concurrent</p>
+						<p class="fragment"><strong>Future&lt;V&gt;</strong> representa o resultado de um processamento asincrone </p>
+						<p class="fragment"><strong>ExecutorService</strong> é um pool que executa os callable (process) e retorna um future</p>
+						<p class="fragment"><strong>get()</strong> é um metodo de Future bloquante que retorna o resultado de tipo V </p>
+					</section>			
 				</section>
 
 				<section>
 					<section data-background="#0C343D">
-						<h2>Função Map</h2>
+						<h2>Desempenho SYNC</h2>
+						<ul>
+						<li>5 Objetos para processar</li>
+						<li>Um processamento demora 2 segundos</li>
+						<li>Cada chamada é bloquante</li>
+						</ul>
 						<a href="#" class="navigate-down"></a>
 					</section>
 					<section data-background="#45818E">
-						<p> Temos um arquivo texto de entrada e para cada linha (representando um usuário e seus amigos) criamos pares<br> <strong> < chave, valor ></strong> </p>
-						<br>
-						<p class="fragment"> <strong>Chave</strong>: tupla formada pelo usuário e um de seus amigos.</p>
-						<p class="fragment"> <strong>Valor</strong>: lista de amigos desse usuário.</p>
+					<h2>Objeto 1</h2>
+						<p>Tempo inicial : 0s - Tempo final : 2s</p>
+						<p>Result res1 = objeto1.process();</p>
+					</section>
+					<section data-background="#76A5AF">
+					<h2>Objeto 2</h2>
+						<p>Tempo inicial : 2s - Tempo final : 4s</p>
+						<p>Result res2 = objeto2.process();</p>
+					</section>
+					<section data-background="#A2C4C9">
+						<h2>Objeto 5</h2>
+						<p>Tempo inicial : 8s - Tempo final : 10s</p>
+						<p>Result res5 = objeto5.process();</p>
 					</section>	
 					<section data-background="#76A5AF">
-						<h5>exemplo</h5>
-						<div style="float:left; width:50%">
-							<p class="fragment"><strong>1 => 2 3 4 6</strong></p>
-							<br>
-							<p class="fragment"> 
-								< (1,2) , [2,3,4,6] > <br>
-								< (1,3) , [2,3,4,6] > <br>
-								< (1,4) , [2,3,4,6] > <br>
-								< (1,6) , [2,3,4,6] >
-							</p>
-						</div>
-						<div style="float:right; width:50%">
-							<p class="fragment"><strong>2 => 1 3</strong></p>
-							<br>
-							<p class="fragment"> 
-								< (1,2) , [1,3] > <br>
-								< (2,3) , [1,3] >  
-							</p>
-						</div>
+						10 Segundos para processar os 5 objetos.
 					</section>
-					<section data-background="#A2C4C9" data-transition="slide">
-						<h5>Código</h5>
-						<pre><code class="hljs" data-trim contenteditable>
-def Map(linhas):
-	current = multiprocessing.current_process()
-	retorno = dict()
-	for linha in linhas:
-		part = linha.split("=>")
-		base = part[0].strip()
-		listaDeAmigos = part[1].split()
-		for amigo in listaDeAmigos:
-			retorno[(min(base,amigo),max(base,amigo))] = setWithoutHim(listaDeAmigos,amigo)
-	print 'ending mapper n°:', current.name, current._identity
-	return retorno					
-					</code></pre>
-						<a href="#/3"></a>
-					</section>				
 				</section>
 
 				<section>
 					<section data-background="#274E13">
-						<h2>Função <b>Agrupamento</b></h2>
+						<h2>Desempenho se Async</h2>
+						<ul>
+						<li>5 Objetos para processar</li>
+						<li>Criar o future demora 0.1 segundos</li>
+						<li>Um processamento demora 2 segundos</li>
+						<li>So o get() é bloquante e atomico</li>
+						</ul>
 						<a href="#" class="navigate-down"></a>
 					</section>
-					<section data-background="#6AA84F">
-						<p> Para o agrupamento mudamos as o <i>valor</i> das tuplas com a mesma <i>chave</i>, agora sendo duas listas ( a lista de (A,B) com a lista de (B,A)) </p>
-					</section>	
-					<section data-background="#93C47D">
-						<h5>exemplo</h5>
-						<br>
-							<div style="float:left; width:50%">
-								<p class="fragment">
-									< (1,2) , [2,3,4,6] >
-								</p>
-							</div>
-							<div style="float:right; width:50%">
-								<p class="fragment">
-									< (1,2) , [1,3] > 
-								</p>
-							</div>
-							<br>
-							<div><h5 class="fragment">< (1,2), ([2,3,4,6] , [1,3]) ></h5></div>
+					<section data-background="#274E13">
+					<h2>Começar o processamento do primeiro objeto</h2>
+						<p>Tempo inicial : 0s - Tempo final : 0.1s</p>
+						<p>Future fut1 = futurePool.submit(process);</p>
+						...
 					</section>
-					<section data-background="#B6D7A8">
-						<h5>Código</h5>
-						<pre><code class="hljs" data-trim contenteditable>
-def Group(resultados):
-    dictionario = dict()
-    for linha in resultados:
-        for key, value in linha.items():
-            if not key in dictionario:
-                dictionario[key]=[value]
-            else:
-                dictionario[key]+= [value]
-    return dictionario
-						</code></pre>
-						<a href="#/2"></a>
-					</section>		
+					<section data-background="#274E13">
+						<p>Tempo inicial : 0.4s - Tempo final : 0.5s</p>
+						<p>Future fut5 = futurePool.submit(process);</p>
+					</section>
+					<section data-background="#274E13">
+						<h2>Recuperar o objeto1</h2>
+						<p>Tempo inicial : 0.5s - Tempo final : 2.1s</p>
+						<p>Result res1 = fut1.get();</p>
+					</section>
+					<section data-background="#274E13">
+						<h2>Recuperar o objeto2</h2>
+						<p>Tempo inicial : 2.1s - Tempo final : 2.2s</p>
+						<p>Result res1 = fut1.get();</p>
+						...
+					</section>
+					<section data-background="#274E13">
+						<h2>Recuperar o objeto5</h2>
+						<p>Tempo inicial : 2.4s - Tempo final : 2.5s</p>
+						<p>Result res5 = fut5.get();</p>
+					</section>
+					<section data-background="#274E13">
+						2.5 Segundos para processar os 5 objetos.
+					</section>
 				</section>
 
 				<section>
 					<section data-background="#7F6000">
-						<h2>Função <b>Reduce</b></h2>
+						<h4>As tarefas</h4>
+						<ul>
+							<li>Criar a estrutura de dados que precisamos</li>
+							<li>Implementar os metodos</li>
+						</ul>
 						<a href="#" class="navigate-down"></a>
 					</section>
-					<section data-background="#F1C232">
-						<p> Recebemos o dicionario e tratamos cada item, guardamos a <i>chave</i> e fazemos a intersecção das listas que compõem o <i>valor</i>. Retornando uma amizade e seus amigos em comum</p>
-					</section>	
-					<section data-background="#FFD966">
-						<h5>exemplo</h5>
-						<br>
-							<div style="float:left; width:50%;">
-								<p class="fragment" style="text-align: left;">
-									< (1,2) , ([2,3,4,6], [1,3]) > <br>
-									< (1,3) , ([2,3,4,6], [1,2,5]) > <br>
-									< (1,4) , ([2,3,4,6], [1,5,6]) > <br>
-									< (1,6) , ([2,3,4,6], [1,4,5]) > <br>
-									< (2,3) , ([1,3], [1,2,5]) > <br>
-									< (3,5) , ([1,2,5], [3,4,6]) > <br>
-									< (4,5) , ([1,5,6], [3,4,6]) > <br>
-									< (4,6) , ([1,5,6], [1,4,5]) > <br>
-									< (5,6) , ([3,4,6], [1,4,5]) > <br>
-								</p>
-							</div>
-							<div style="float:right; width:30%;">
-								<p class="fragment" style="text-align: left;" >
-									< (1,2) , [3] ><br>
-									< (1,3) , [2] > <br>
-									< (1,4) , [6] > <br>
-									< (1,6) , [4] > <br>
-									< (2,3) , [1] > <br>
-									< (3,5) , [] > <br>
-									< (4,5) , [6] > <br>
-									< (4,6) , [1,5] > <br>
-									< (5,6) , [4] > <br>
-								</p>
-							</div>
-							<br>
+					
+					<section data-background="#7F6000">
+						<h4>Criaçao da estrutura</h4>
+						<ul>
+							<li>Modificar o Cliente.java</li>
+							<li>Implementar AsyncDistribuedFileSystem</li>
+						</ul>
 					</section>
-					<section data-background="#FFE599">
-						<h5>Código</h5>
+					<section data-background="#7F6000">
+						<img src="uml.png">
+					</section>
+					<section data-background="#7F6000">
+						<h4>Modificar o Cliente.java</h4>
 						<pre><code class="hljs" data-trim contenteditable>
-def Reduce(dictionario):
-	current = multiprocessing.current_process()
-	#print dictionario.items()"
-	for key,value in dictionario.items():
-		if len(value)>1:
-			dictionario[key]=value[0]&value[1]
-		elif len(value) == 1:
-			dictionario[key]=value[0]
-		else:
-			dictionario[key]={}
-	print 'ending mapper n°:', current.name, current._identity
-	return dictionario
+	public static boolean isAsynchronousMode() {
+		return asynchronousMode.get();
+	}			
 						</code></pre>
-						<a href="#/3"></a>
-					</section>				
+					
+					</section>
+					<section data-background="#7F6000">
+						<h4>Implementar Async_Distribued_FileSystem</h4>
+						<pre><code class="hljs" data-trim contenteditable>
+	public class AsyncDistributedFileSystem {
+	  private final DistributedFileSystem dfs;
+	  AsyncDistributedFileSystem(final DistributedFileSystem dfs) {
+	    this.dfs = dfs;
+	  }
+	  private static &lt;T&gt; Future&lt;T&gt; getReturnValue() {
+	    return new AsyncGetFuture&lt;&gt;(AsyncCallHandler.getAsyncReturn());
+		}
+	}</code></pre>
+					
+					</section>						
 				</section>
 
-				<section data-background="#783F04">
-					<h3>Prática</h3>
+				<section>
+					<section data-background="#783F04">
+						<h4>As meta-operaçoes a implementar</h4>
+						<ul>
+							<li>rename</li>
+							<li>setPermission/setOwner</li>
+							<li>setAcl/getAclStatus</li>
+						</ul>
+						<a href="#" class="navigate-down"></a>
+					</section>
+					<section data-background="#783F04">
+					<h4>Detalhes da implementaçao de rename</h4>
+						
+					</section>
+					<section data-background="#783F04">
+						<h4>Como esta implementado em DistribuedFileSystem	</h4>
+	<pre><code class="hljs" data-trim contenteditable>
+	public void rename(Path src, Path dst, final Options.Rename... options){
+	    statistics.incrementWriteOps(1);
+	    storageStatistics.incrementOpCounter(OpType.RENAME);
+	    final Path absSrc = fixRelativePart(src);
+	    final Path absDst = fixRelativePart(dst);
+	     dfs.rename(getPathName(absSrc), getPathName(absDst), options);
+	}
+						</code></pre>
+					</section>
+					<section data-background="#783F04">
+						<h4>Como esta implementado em AsyncDistribuedFileSystem	</h4>
+	<pre><code class="hljs" data-trim contenteditable>
+	public Future&lt;Void&gt; rename(Path src, Path dst,final Options.Rename... options) throws IOException {
+	    dfs.getFsStatistics().incrementWriteOps(1);
+	    dfs.getDFSOpsCountStatistics().incrementOpCounter(OpType.RENAME);
+	    final Path absSrc = dfs.fixRelativePart(src);
+	    final Path absDst = dfs.fixRelativePart(dst);
+	    dfs.getClient().rename(dfs.getPathName(absSrc), dfs.getPathName(absDst),options);
+	    return getReturnValue();
+	}
+						</code></pre>
+					</section>
 				</section>
 
-				<section data-background="#660000">
-					<ul>
-						<li><a href="https://github.com/1001prez/MC855">https://github.com/1001prez/MC855</a></li>
-						<li><a href="https://www.facebook.com/notes/facebook-data-science/anatomy-of-facebook/10150388519243859/">https://www.facebook.com/notes/facebook-data-science/anatomy-of-facebook/10150388519243859/</a></li>
-						<li><a href="http://stevekrenzel.com/finding-friends-with-mapreduce">http://stevekrenzel.com/finding-friends-with-mapreduce</a></li>
-						<li><a href="https://docs.python.org/2/library/multiprocessing.html">https://docs.python.org/2/library/multiprocessing.html</a></li>
-						<li><a href="https://snap.stanford.edu/data/egonets-Facebook.html">https://snap.stanford.edu/data/egonets-Facebook.html</a></li>
-					</ul>
+				<section>
+					<section  data-background="#660000">
+						<h2>Novos Updates</h2>
+						<img class="fragment" src="./horario.png">
+						<a href="#" class="navigate-down"></a>
+					</section>
+					<section  data-background="#660000">
+						<img src="./remove.png">
+						<img src="./rename.png">
+						<p>Async-HDFS-Performance-Report.pdf</p>
+					</section>
 				</section>
 
 				<section style="text-align: left;" data-background="./clap.gif">
 					<h1>Fim</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
 				</section>
-							<section>
+
 			<section>
-			<h4>Future e asincronismo</h4>
-			<p>java.util.concurrent</p>
-			<p class="fragment"><strong>Future&lt;V&gt;</strong> representa o resultado de um processamento asincrone </p>
-			<p class="fragment"><strong>ExecutorService</strong> é um pool que executa os callable (process) e retorna um future</p>
-			<p class="fragment"><strong>get()</strong> é um metodo de Future bloquante que retorna o resultado de tipo V </p>
-			</section>
-				<section>
-					<p>Util quando tem muitas chamadas</p>
-				</section>
+				
 			</section>
 			<section>
-				<section>
-					<h2>Desempenho se SYNC</h2>
-					<ul>
-					<li>5 Objetos para processar</li>
-					<li>Um processamento demora 2 segundos</li>
-					<li>Cada chamada é bloquante</li>
-					</ul>
-				</section>
-				<section>
-				<h2>Objeto 1</h2>
-					<p>Tempo inicial : 0s - Tempo final : 2s</p>
-					<p>Result res1 = objeto1.process();</p>
-				</section>
-				<section>
-				<h2>Objeto 2</h2>
-					<p>Tempo inicial : 2s - Tempo final : 4s</p>
-					<p>Result res2 = objeto2.process();</p>
-					...
-				</section>
-				<section>
-					<h2>Objeto 5</h2>
-					<p>Tempo inicial : 8s - Tempo final : 10s</p>
-					<p>Result res5 = objeto5.process();</p>
-				</section>
-				<section>
-					10 Segundos para processar os 5 objetos.
-				</section>
+				
 			</section>
 			<section>
-				<section>
-					<h2>Desempenho se Async</h2>
-					<ul>
-					<li>5 Objetos para processar</li>
-					<li>Criar o future demora 0.1 segundos</li>
-					<li>Um processamento demora 2 segundos</li>
-					<li>So o get() é bloquante e atomico</li>
-					</ul>
-				</section>
-				<section>
-				<h2>Começar o processamento do primeiro objeto</h2>
-					<p>Tempo inicial : 0s - Tempo final : 0.1s</p>
-					<p>Future fut1 = futurePool.submit(process);</p>
-					...
-				</section>
-				<section>
-					<p>Tempo inicial : 0.4s - Tempo final : 0.5s</p>
-					<p>Future fut5 = futurePool.submit(process);</p>
-				</section>
-				<section>
-					<h2>Recuperar o objeto1</h2>
-					<p>Tempo inicial : 0.5s - Tempo final : 2.1s</p>
-					<p>Result res1 = fut1.get();</p>
-				</section>
-				<section>
-					<h2>Recuperar o objeto2</h2>
-					<p>Tempo inicial : 2.1s - Tempo final : 2.2s</p>
-					<p>Result res1 = fut1.get();</p>
-					...
-				</section>
-				<section>
-					<h2>Recuperar o objeto5</h2>
-					<p>Tempo inicial : 2.4s - Tempo final : 2.5s</p>
-					<p>Result res5 = fut5.get();</p>
-				</section>
-				<section>
-					2.5 Segundos para processar os 5 objetos.
-				</section>
-			</section>
-				<section>
-					<h4>As tarefas</h4>
-					<ul>
-						<li>Criar a estrutura de dados que precisamos</li>
-						<li>Implementar os metodos</li>
-					</ul>
-				</section>
-				<section>
-				<section>
-					<h4>Criaçao da estrutura</h4>
-					<ul>
-						<li>Modificar o Cliente.java</li>
-						<li>Implementar AsyncDistribuedFileSystem</li>
-					</ul>
-				</section>
-				<section>
-					<img src="uml.png">
-				</section>
-				<section>
-					<h4>Modificar o Cliente.java</h4>
-					<pre><code class="hljs" data-trim contenteditable>
-public static boolean isAsynchronousMode() {
-	return asynchronousMode.get();
-}			
-					</code></pre>
 				
 				</section>
-				<section>
-					<h4>Implementar Async_Distribued_FileSystem</h4>
-					<pre><code class="hljs" data-trim contenteditable>
-public class AsyncDistributedFileSystem {
-  private final DistributedFileSystem dfs;
-  AsyncDistributedFileSystem(final DistributedFileSystem dfs) {
-    this.dfs = dfs;
-  }
-  private static &lt;T&gt; Future&lt;T&gt; getReturnValue() {
-    return new AsyncGetFuture&lt;&gt;(AsyncCallHandler.getAsyncReturn());
-	}
-}</code></pre>
 				
-				</section>
-			</section>
-			<section>
-				<section>
-					<h4>As meta-operaçoes a implementar</h4>
-					<ul>
-						<li>rename</li>
-						<li>setPermission/setOwner</li>
-						<li>setAcl/getAclStatus</li>
-					</ul>
-				</section>
-				<section>
-				<h4>Detalhes da implementaçao de rename</h4>
-					
-				</section>
-				<section>
-					<h4>Como esta implementado em DistribuedFileSystem	</h4>
-<pre><code class="hljs" data-trim contenteditable>
-public void rename(Path src, Path dst, final Options.Rename... options){
-    statistics.incrementWriteOps(1);
-    storageStatistics.incrementOpCounter(OpType.RENAME);
-    final Path absSrc = fixRelativePart(src);
-    final Path absDst = fixRelativePart(dst);
-     dfs.rename(getPathName(absSrc), getPathName(absDst), options);
-}
-					</code></pre>
-				</section>
-				<section>
-					<h4>Como esta implementado em AsyncDistribuedFileSystem	</h4>
-<pre><code class="hljs" data-trim contenteditable>
-public Future&lt;Void&gt; rename(Path src, Path dst,final Options.Rename... options) throws IOException {
-    dfs.getFsStatistics().incrementWriteOps(1);
-    dfs.getDFSOpsCountStatistics().incrementOpCounter(OpType.RENAME);
-    final Path absSrc = dfs.fixRelativePart(src);
-    final Path absDst = dfs.fixRelativePart(dst);
-    dfs.getClient().rename(dfs.getPathName(absSrc), dfs.getPathName(absDst),options);
-    return getReturnValue();
-}
-					</code></pre>
-				</section>
-				</section>
-				<section>
-				<img src="compare.png">
-				</section>
 
 
 
