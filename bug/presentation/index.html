@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>[HDFS-13264]</h1>
+					<i><h2>DFSOutputStream close() Fails</h2></i>
+					<p>
+						<small>Created by:</small><br>
+
+						<small>Hugo A. B. Djemaa - RA 181596 | Gabriel Caê C. Bounous - RA 181493 </small>
+
+					</p>
+				</section>
+
+				<section>
+					<section data-background="#4C1130">
+						<h2>HDSF</h2>
+						<h3>Hadoop Distributed File System</h3>
+						<a href="#" class="navigate-down"></a>
+					</section>
+
+					<section data-background="#7F174F">
+						<h3>Arquitetura</h3>
+						<img class="fragment" src="./hdfs.gif">								
+						<a href="#/2"></a>
+					</section>				
+				</section>
+
+				<section>
+					<section data-background="#073763">
+						<h2> HDFS-13264 </h2>
+						<h4>O que? Porque?</h4>
+					</section>					
+					<section data-background="#073763">
+						<ul>
+							<li class="fragment">Criado por: Seb Mo</li>
+							<li class="fragment">Assigned to: Yiqun Lin(?) </li>	
+						</ul>
+					</section>
+					<section data-background="#073763">
+						<img style="height: 100%;" src="./13264.png">
+					</section>
+					<section data-background="#073763">
+						<h3>OutputStream</h3>
+						<p>Usado para representar um fluxo</p>
+					</section>	
+					<section>
+						<h3>OutputStream</h3>
+						<p class="fragment"><strong>Write</strong> dados dentro do fluxo</p>
+						<p class="fragment"><strong>Flush</strong> manda a informaçao do fluxo para as saidas</p>
+						<p class="fragment"><strong>Close</strong> Fecha o fluxo </p>
+					</section>		
+				</section>
+
+				<section>
+					<section data-background="#0C343D">
+						<h2>DFSOutputStream</h2>
+						<ul>
+						<li>DFSOutputStream-|> FSOutputSummer-|>OutputStream</li>
+						<li>FSOutputSummer é usado para gerir os checksums</li>
+						<li>DFSOutputStream para gerir os metodos do sistema de arquivo do Hadoop</li>
+						</ul>
+						<a href="#" class="navigate-down"></a>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="#274E13">
+						<h2>O que é o problema ?</h2>
+						<p class="fragment">Esvaziamento de memoria</p>
+						<p class="fragment">DFSClient.class.getDeclaredField("filesBeingWritten")...</p>
+						<p class="fragment">pode dar informaçoes sobre um outputstream normalmente fechado</p>
+					</section>
+					<section data-background="#274E13">
+						<h2>Codigo	</h2>
+							<pre><code class="hljs" data-trim contenteditable>
+outputStream.close();
+Field field = DFSClient.class.getDeclaredField("filesBeingWritten");
+field.setAccessible(true);
+System.out.print("THIS SHOULD BE EMPTY: " + field.get(newFileSystem.getClient()));
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-background="#274E13">
+					<h2>O que é um lease</h2>
+						<p class="fragment">Direito sobre um arquivo : unico a escrever ou ler</p>
+						<p class="fragment">Revovido periodicamente</p>
+					</section>
+					<section data-background="#274E13">
+					<h2>Quando acontece</h2>
+						<p class="fragment">Fechar um outputstream nao conclui se nenhum datanode esta disponivel</p>
+						<p class="fragment">Close chama Flush</p>
+						<p class="fragment">A funçao checkClosed de flush manda uma exeçao</p>
+						<p class="fragment">Faz que endFileLease(fileId) nunca esta chamada</p>
+					</section>
+					<section data-background="#274E13">
+					<h2>Como o resolver</h2>
+						<p class="fragment">Tentar de forçar a chamada de endFileLease</p>
+					</section>
+				</section>
+				<section>
+				 	<h1>Demonstraçao</h1>
+				</section>
+				<section style="text-align: left;" data-background="./clap.gif">
+					<h1>Fim</h1>
+				</section>
+
+
+			<section>
+				
+			</section>
+			<section>
+				
+				</section>
+				
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,1234 @@
+{
+  "version": 1,
+  "width": 108,
+  "height": 31,
+  "duration": 120.256272,
+  "command": "/bin/zsh",
+  "title": "",
+  "env": {
+    "TERM": "xterm",
+    "SHELL": "/bin/zsh"
+  },
+  "stdout": [
+    [
+      1.074947,
+      " ________________________________________\r\n/ There is always one thing to remember: \\\r\n| writers are always selling somebody    |\r\n"
+    ],
+    [
+      0.000014,
+      "| out.                                   |\r\n|                                        |\r\n| -- Joan Didion, \"Slouching Towards     |\r\n\\ Bethlehem\"                             /\r\n"
+    ],
+    [
+      0.000006,
+      " ----------------------------------------"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000037,
+      "       \\          /\\/\\\r\n"
+    ],
+    [
+      0.000019,
+      "        \\         \\/\\/\r\n         \\        /   -\\\r\n"
+    ],
+    [
+      0.000004,
+      "          \\     /  oo   -\\\r\n"
+    ],
+    [
+      0.000030,
+      "           \\  /           \\\r\n"
+    ],
+    [
+      0.000007,
+      "             |    ---\\    -\\\r\n             \\--/     \\     \\"
+    ],
+    [
+      0.000015,
+      "\r\n"
+    ],
+    [
+      0.000004,
+      "                       |      -\\\r\n"
+    ],
+    [
+      0.000028,
+      "                        \\       -\\         -------------\\    /-\\\r\n"
+    ],
+    [
+      0.000006,
+      "                         \\        \\-------/              ---/    \\\r\n"
+    ],
+    [
+      0.000032,
+      "                          \\                                  |\\   \\"
+    ],
+    [
+      0.000008,
+      "\r\n                           |                                 / |  |\r\n"
+    ],
+    [
+      0.000014,
+      "                           \\                                |  \\  |"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000006,
+      "                            |                              /    \\ |"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000031,
+      "                            |                             /     \\ |\r\n"
+    ],
+    [
+      0.000021,
+      "                             \\                             \\     \\|\r\n                              -              /--------\\    |      o\r\n"
+    ],
+    [
+      0.000010,
+      "                               \\+   +---------          \\   |\r\n                                |   |                   |   \\\r\n"
+    ],
+    [
+      0.000010,
+      "                                |   |                    \\   |\r\n                                |   |                    |   \\\r\n"
+    ],
+    [
+      0.000011,
+      "                                |   |                     \\   |\r\n                                 \\  |                     |   |\r\n"
+    ],
+    [
+      0.000016,
+      "                                 |  |                      \\  \\\r\n                                 |  |                      |   |"
+    ],
+    [
+      0.000009,
+      "\r\n                                 +--+                       ---+"
+    ],
+    [
+      0.000006,
+      "\r\n"
+    ],
+    [
+      0.001381,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r"
+    ],
+    [
+      0.000094,
+      "\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007"
+    ],
+    [
+      0.000027,
+      "\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.004740,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m \u001b[K"
+    ],
+    [
+      0.000038,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      2.179259,
+      "c"
+    ],
+    [
+      0.888593,
+      "\u0008cl"
+    ],
+    [
+      0.071653,
+      "e"
+    ],
+    [
+      0.185515,
+      "a"
+    ],
+    [
+      0.075992,
+      "r"
+    ],
+    [
+      0.297229,
+      "\u001b[?1l\u001b\u003e\r\r\n"
+    ],
+    [
+      0.002040,
+      "\u001b]2;clear\u0007\u001b]1;clear\u0007"
+    ],
+    [
+      0.001955,
+      "\u001b[H\u001b[2J"
+    ],
+    [
+      0.000705,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.008074,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m "
+    ],
+    [
+      0.000014,
+      "\u001b[K"
+    ],
+    [
+      0.000091,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      3.786272,
+      "."
+    ],
+    [
+      0.135007,
+      "\u0008.."
+    ],
+    [
+      0.111874,
+      "/"
+    ],
+    [
+      1.072152,
+      "b"
+    ],
+    [
+      0.130232,
+      "i"
+    ],
+    [
+      0.080856,
+      "n"
+    ],
+    [
+      0.172629,
+      "\u001b[1m/\u001b[0m"
+    ],
+    [
+      0.719487,
+      "\u0008\u001b[0m/h"
+    ],
+    [
+      0.063318,
+      "d"
+    ],
+    [
+      0.168629,
+      "fs"
+    ],
+    [
+      0.562379,
+      " "
+    ],
+    [
+      0.394570,
+      "n"
+    ],
+    [
+      0.067399,
+      "a"
+    ],
+    [
+      0.126572,
+      "m"
+    ],
+    [
+      0.103312,
+      "e"
+    ],
+    [
+      0.179807,
+      "n"
+    ],
+    [
+      0.173523,
+      "o"
+    ],
+    [
+      0.469800,
+      "d"
+    ],
+    [
+      0.330976,
+      "e"
+    ],
+    [
+      0.419931,
+      " "
+    ],
+    [
+      0.173469,
+      "-"
+    ],
+    [
+      0.218693,
+      "f"
+    ],
+    [
+      0.182305,
+      "o"
+    ],
+    [
+      0.069741,
+      "r"
+    ],
+    [
+      0.120909,
+      "m"
+    ],
+    [
+      0.121510,
+      "a"
+    ],
+    [
+      0.134424,
+      "t"
+    ],
+    [
+      0.181298,
+      "\u001b[?1l\u001b\u003e\r\r\n\u001b]2;../bin/hdfs namenode -format\u0007\u001b]1;../bin/hdfs\u0007"
+    ],
+    [
+      0.485999,
+      "16/06/29 00:43:11 INFO namenode.NameNode: STARTUP_MSG: \r\n/************************************************************\r\nSTARTUP_MSG: Starting NameNode\r\nSTARTUP_MSG:   host = localhost/127.0.0.1\r\nSTARTUP_MSG:   args = [-format]\r\nSTARTUP_MSG:   version = 2.7.2\r\nSTARTUP_MSG:   classpath = /home/hugo/workspace/hadoop/etc/hadoop:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jackson-jaxrs-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/curator-recipes-2.7.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/junit-4.11.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jets3t-0.9.0.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/java-xmlbuilder-0.4.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/log4j-1.2.17.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/xmlenc-0.52.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jsr305-3.0.0.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/curator-framework-2.7.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-compress-1.4.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/mockito-all-1.8.5.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/paranamer-2.3.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-collections-3.2.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-configuration-1.6.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/slf4j-api-1.7.10.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-httpclient-3.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/apacheds-i18n-2.0.0-M15.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jackson-xc-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jsp-api-2.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/hadoop-annotations-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jsch-0.1.42.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-beanutils-core-1.8.0.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/api-util-1.0.0-M20.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jettison-1.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/activation-1.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/hadoop-auth-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jaxb-impl-2.2.3-1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-math3-3.1.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jersey-server-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/protobuf-java-2.5.0.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/xz-1.0.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/zookeeper-3.4.6.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jackson-core-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jaxb-api-2.2.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-net-3.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/guava-11.0.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/netty-3.6.2.Final.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-io-2.4.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/asm-3.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-beanutils-1.7.0.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jetty-6.1.26.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/httpcore-4.2.5.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/httpclient-4.2.5.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/gson-2.2.4.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-codec-1.4.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/avro-1.7.4.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/snappy-java-1.0.4.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-digester-1.8.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jetty-util-6.1.26.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar:/"
+    ],
+    [
+      0.000068,
+      "home/hugo/workspace/hadoop/share/hadoop/common/lib/api-asn1-api-1.0.0-M20.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jersey-core-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jackson-mapper-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-lang-2.6.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/stax-api-1.0-2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/htrace-core-3.1.0-incubating.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/servlet-api-2.5.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/curator-client-2.7.1.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/jersey-json-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/hamcrest-core-1.3.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-logging-1.1.3.jar:/home/hugo/workspace/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/hadoop-nfs-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/hadoop-common-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/common/hadoop-common-2.7.2-tests.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/log4j-1.2.17.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/xmlenc-0.52.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jsr305-3.0.0.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/leveldbjni-all-1.8.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jersey-server-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/protobuf-java-2.5.0.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jackson-core-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/commons-daemon-1.0.13.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/guava-11.0.2.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/netty-3.6.2.Final.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/commons-io-2.4.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/asm-3.2.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jetty-6.1.26.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/commons-codec-1.4.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jetty-util-6.1.26.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/xml-apis-1.3.04.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jersey-core-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/jackson-mapper-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/commons-lang-2.6.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/netty-all-4.0.23.Final.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/htrace-core-3.1.0-incubating.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/servlet-api-2.5.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/xercesImpl-2.9.1.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/commons-logging-1.1.3.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/lib/commons-cli-1.2.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/hadoop-hdfs-2.7.2-tests.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/hadoop-hdfs-nfs-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/hdfs/hadoop-hdfs-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jackson-jaxrs-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jersey-client-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/log4j-1.2.17.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jsr305-3.0.0.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-compress-1.4.1.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-collections-3.2.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jackson-xc-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/leveldbjni-all-1.8.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jettison-1.1.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/activation-1.1.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jaxb-impl-2.2.3-1.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jersey-server-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/proto"
+    ],
+    [
+      0.000059,
+      "buf-java-2.5.0.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/xz-1.0.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/zookeeper-3.4.6.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/zookeeper-3.4.6-tests.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jackson-core-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jaxb-api-2.2.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/javax.inject-1.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/guava-11.0.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/netty-3.6.2.Final.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-io-2.4.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/asm-3.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/guice-servlet-3.0.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jetty-6.1.26.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-codec-1.4.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jersey-guice-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/guice-3.0.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jetty-util-6.1.26.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/aopalliance-1.0.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jersey-core-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jackson-mapper-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-lang-2.6.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/stax-api-1.0-2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/servlet-api-2.5.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/jersey-json-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-logging-1.1.3.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/lib/commons-cli-1.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-nodemanager-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-tests-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-resourcemanager-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-applicationhistoryservice-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-common-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-sharedcachemanager-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-server-web-proxy-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-client-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-registry-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-applications-unmanaged-am-launcher-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-api-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/yarn/hadoop-yarn-common-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/junit-4.11.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/log4j-1.2.17.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/commons-compress-1.4.1.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/paranamer-2.3.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/hadoop-annotations-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/leveldbjni-all-1.8.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/jersey-server-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/protobuf-java-2.5.0.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/xz-1.0.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/jackson-core-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/javax.inject-1.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/netty-3.6.2.Final.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/commons-io-2.4.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/asm-3.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/guice-servlet-3.0.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/jersey-gui"
+    ],
+    [
+      0.000026,
+      "ce-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/avro-1.7.4.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/snappy-java-1.0.4.1.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/guice-3.0.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/aopalliance-1.0.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/jersey-core-1.9.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/lib/hamcrest-core-1.3.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-common-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.2-tests.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-shuffle-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-plugins-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-app-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.2.jar:/home/hugo/workspace/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-hs-2.7.2.jar:/usr/lib/jvm/jdk1.8.0_71/lib/tools.jar\r\nSTARTUP_MSG:   build = https://git-wip-us.apache.org/repos/asf/hadoop.git -r b165c4fe8a74265c792ce23f546c64604acf0e41; compiled by 'jenkins' on 2016-01-26T00:08Z\r\nSTARTUP_MSG:   java = 1.8.0_71\r\n************************************************************/\r\n"
+    ],
+    [
+      0.008584,
+      "16/06/29 00:43:11 INFO namenode.NameNode: registered UNIX signal handlers for [TERM, HUP, INT]"
+    ],
+    [
+      0.000015,
+      "\r\n"
+    ],
+    [
+      0.003707,
+      "16/06/29 00:43:11 INFO namenode.NameNode: createNameNode [-format]\r\n"
+    ],
+    [
+      0.522139,
+      "Formatting using clusterid: CID-c3ac71ba-ada7-43f3-af54-e9ccb4feb935"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.029848,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: No KeyProvider found.\r\n"
+    ],
+    [
+      0.000058,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: fsLock is fair:true"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.036354,
+      "16/06/29 00:43:12 INFO blockmanagement.DatanodeManager: dfs.block.invalidate.limit=1000\r\n"
+    ],
+    [
+      0.000081,
+      "16/06/29 00:43:12 INFO blockmanagement.DatanodeManager: dfs.namenode.datanode.registration.ip-hostname-check=true"
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.001205,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: dfs.namenode.startup.delay.block.deletion.sec is set to 000:00:00:00.000\r\n"
+    ],
+    [
+      0.000322,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: The block deletion will start around 2016 Jun 29 00:43:12\r\n"
+    ],
+    [
+      0.002068,
+      "16/06/29 00:43:12 INFO util.GSet: Computing capacity for map BlocksMap\r\n"
+    ],
+    [
+      0.000069,
+      "16/06/29 00:43:12 INFO util.GSet: VM type       = 64-bit\r\n"
+    ],
+    [
+      0.001465,
+      "16/06/29 00:43:12 INFO util.GSet: 2.0% max memory 889 MB = 17.8 MB\r\n"
+    ],
+    [
+      0.000104,
+      "16/06/29 00:43:12 INFO util.GSet: capacity      = 2^21 = 2097152 entries\r\n"
+    ],
+    [
+      0.011882,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: dfs.block.access.token.enable=false\r\n"
+    ],
+    [
+      0.000229,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: defaultReplication         = 1\r\n"
+    ],
+    [
+      0.000051,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: maxReplication             = 512\r\n"
+    ],
+    [
+      0.000064,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: minReplication             = 1\r\n"
+    ],
+    [
+      0.000059,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: maxReplicationStreams      = 2\r\n"
+    ],
+    [
+      0.000069,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: replicationRecheckInterval = 3000\r\n"
+    ],
+    [
+      0.000047,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: encryptDataTransfer        = false\r\n"
+    ],
+    [
+      0.000069,
+      "16/06/29 00:43:12 INFO blockmanagement.BlockManager: maxNumBlocksToLog          = 1000\r\n"
+    ],
+    [
+      0.006263,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: fsOwner             = hugo (auth:SIMPLE)\r\n"
+    ],
+    [
+      0.000056,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: supergroup          = supergroup\r\n"
+    ],
+    [
+      0.000059,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: isPermissionEnabled = true\r\n"
+    ],
+    [
+      0.000174,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: HA Enabled: false\r\n"
+    ],
+    [
+      0.001865,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: Append Enabled: true\r\n"
+    ],
+    [
+      0.174858,
+      "16/06/29 00:43:12 INFO util.GSet: Computing capacity for map INodeMap\r\n"
+    ],
+    [
+      0.000023,
+      "16/06/29 00:43:12 INFO util.GSet: VM type       = 64-bit"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000226,
+      "16/06/29 00:43:12 INFO util.GSet: 1.0% max memory 889 MB = 8.9 MB\r\n"
+    ],
+    [
+      0.000045,
+      "16/06/29 00:43:12 INFO util.GSet: capacity      = 2^20 = 1048576 entries\r\n"
+    ],
+    [
+      0.017591,
+      "16/06/29 00:43:12 INFO namenode.FSDirectory: ACLs enabled? false"
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.000088,
+      "16/06/29 00:43:12 INFO namenode.FSDirectory: XAttrs enabled? true"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000133,
+      "16/06/29 00:43:12 INFO namenode.FSDirectory: Maximum size of an xattr: 16384"
+    ],
+    [
+      0.000002,
+      "\r\n"
+    ],
+    [
+      0.000241,
+      "16/06/29 00:43:12 INFO namenode.NameNode: Caching file names occuring more than 10 times"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.006474,
+      "16/06/29 00:43:12 INFO util.GSet: Computing capacity for map cachedBlocks"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.000069,
+      "16/06/29 00:43:12 INFO util.GSet: VM type       = 64-bit"
+    ],
+    [
+      0.000003,
+      "\r\n"
+    ],
+    [
+      0.000256,
+      "16/06/29 00:43:12 INFO util.GSet: 0.25% max memory 889 MB = 2.2 MB\r\n"
+    ],
+    [
+      0.000080,
+      "16/06/29 00:43:12 INFO util.GSet: capacity      = 2^18 = 262144 entries\r\n"
+    ],
+    [
+      0.002956,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: dfs.namenode.safemode.threshold-pct = 0.9990000128746033\r\n16/06/29 00:43:12 INFO namenode.FSNamesystem: dfs.namenode.safemode.min.datanodes = 0\r\n16/06/29 00:43:12 INFO namenode.FSNamesystem: dfs.namenode.safemode.extension     = 30000\r\n"
+    ],
+    [
+      0.002823,
+      "16/06/29 00:43:12 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.window.num.buckets = 10"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.000085,
+      "16/06/29 00:43:12 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.num.users = 10"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.000097,
+      "16/06/29 00:43:12 INFO metrics.TopMetrics: NNTop conf: dfs.namenode.top.windows.minutes = 1,5,25\r\n"
+    ],
+    [
+      0.002187,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: Retry cache on namenode is enabled\r\n"
+    ],
+    [
+      0.000175,
+      "16/06/29 00:43:12 INFO namenode.FSNamesystem: Retry cache will use 0.03 of total heap and retry cache entry expiry time is 600000 millis\r\n"
+    ],
+    [
+      0.002976,
+      "16/06/29 00:43:12 INFO util.GSet: Computing capacity for map NameNodeRetryCache\r\n"
+    ],
+    [
+      0.000085,
+      "16/06/29 00:43:12 INFO util.GSet: VM type       = 64-bit\r\n"
+    ],
+    [
+      0.000244,
+      "16/06/29 00:43:12 INFO util.GSet: 0.029999999329447746% max memory 889 MB = 273.1 KB"
+    ],
+    [
+      0.000004,
+      "\r\n"
+    ],
+    [
+      0.000094,
+      "16/06/29 00:43:12 INFO util.GSet: capacity      = 2^15 = 32768 entries\r\n"
+    ],
+    [
+      0.018133,
+      "Re-format filesystem in Storage Directory /tmp/hadoop-hugo/dfs/name ? (Y or N) "
+    ],
+    [
+      1.473195,
+      "Y"
+    ],
+    [
+      0.300782,
+      "\r\n"
+    ],
+    [
+      0.084081,
+      "16/06/29 00:43:14 INFO namenode.FSImage: Allocated new BlockPoolId: BP-51553558-127.0.0.1-1467171794219\r\n"
+    ],
+    [
+      0.074344,
+      "16/06/29 00:43:14 INFO common.Storage: Storage directory /tmp/hadoop-hugo/dfs/name has been successfully formatted.\r\n"
+    ],
+    [
+      0.162417,
+      "16/06/29 00:43:14 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid \u003e= 0"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.002881,
+      "16/06/29 00:43:14 INFO util.ExitUtil: Exiting with status 0\r\n"
+    ],
+    [
+      0.001555,
+      "16/06/29 00:43:14 INFO namenode.NameNode: SHUTDOWN_MSG: \r\n/************************************************************\r\nSHUTDOWN_MSG: Shutting down NameNode at localhost/127.0.0.1\r\n************************************************************/\r\n"
+    ],
+    [
+      0.014204,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r"
+    ],
+    [
+      0.000075,
+      "\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007"
+    ],
+    [
+      0.000021,
+      "\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.003739,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m \u001b[K"
+    ],
+    [
+      0.000007,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      1.716815,
+      "."
+    ],
+    [
+      0.153078,
+      "\u0008.."
+    ],
+    [
+      0.288070,
+      "/"
+    ],
+    [
+      0.488506,
+      "s"
+    ],
+    [
+      0.397782,
+      "b"
+    ],
+    [
+      0.126131,
+      "i"
+    ],
+    [
+      0.089872,
+      "n"
+    ],
+    [
+      2.166730,
+      "/"
+    ],
+    [
+      6.108367,
+      "s"
+    ],
+    [
+      0.214821,
+      "t"
+    ],
+    [
+      0.139776,
+      "a"
+    ],
+    [
+      0.085636,
+      "r"
+    ],
+    [
+      0.227707,
+      "t"
+    ],
+    [
+      0.908718,
+      "-"
+    ],
+    [
+      0.234030,
+      "d"
+    ],
+    [
+      0.198901,
+      "f"
+    ],
+    [
+      0.067562,
+      "s"
+    ],
+    [
+      0.677422,
+      "."
+    ],
+    [
+      0.560469,
+      "s"
+    ],
+    [
+      0.166521,
+      "h"
+    ],
+    [
+      0.598985,
+      "\u001b[?1l\u001b\u003e\r\r\n\u001b]2;../sbin/start-dfs.sh\u0007\u001b]1;../sbin/start-dfs.sh\u0007"
+    ],
+    [
+      1.071842,
+      "Starting namenodes on [localhost]\r\n"
+    ],
+    [
+      0.189643,
+      "localhost: starting namenode, logging to /home/hugo/workspace/hadoop/logs/hadoop-hugo-namenode-localhost.out\r\n"
+    ],
+    [
+      4.217418,
+      "localhost: starting datanode, logging to /home/hugo/workspace/hadoop/logs/hadoop-hugo-datanode-localhost.out\r\n"
+    ],
+    [
+      5.002677,
+      "Starting secondary namenodes [0.0.0.0]\r\n"
+    ],
+    [
+      0.177317,
+      "0.0.0.0: starting secondarynamenode, logging to /home/hugo/workspace/hadoop/logs/hadoop-hugo-secondarynamenode-localhost.out\r\n"
+    ],
+    [
+      5.990905,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.003469,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m "
+    ],
+    [
+      0.000008,
+      "\u001b[K"
+    ],
+    [
+      0.000070,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      1.326213,
+      "."
+    ],
+    [
+      0.144206,
+      "\u0008.."
+    ],
+    [
+      0.314207,
+      "/"
+    ],
+    [
+      1.185585,
+      "b"
+    ],
+    [
+      0.094764,
+      "i"
+    ],
+    [
+      0.094053,
+      "n"
+    ],
+    [
+      0.628918,
+      "/"
+    ],
+    [
+      1.173790,
+      "h"
+    ],
+    [
+      0.166478,
+      "d"
+    ],
+    [
+      0.669466,
+      "f"
+    ],
+    [
+      0.123441,
+      "s"
+    ],
+    [
+      0.237323,
+      "\u0007"
+    ],
+    [
+      0.000015,
+      "\r\r\n"
+    ],
+    [
+      0.000059,
+      "\u001b[J\u001b[1;32mhdfs\u001b[0m*      \u001b[J\u001b[1;32mhdfs.cmd\u001b[0m*\u001b[J\u001b[A\u001b[0m\u001b[27m\u001b[24m\r\u001b[13C"
+    ],
+    [
+      0.000007,
+      "../bin/hdfs\u001b[K"
+    ],
+    [
+      0.712365,
+      " "
+    ],
+    [
+      2.115415,
+      "d"
+    ],
+    [
+      0.230600,
+      "f"
+    ],
+    [
+      0.080753,
+      "s"
+    ],
+    [
+      0.080656,
+      " "
+    ],
+    [
+      0.206674,
+      "-"
+    ],
+    [
+      0.347147,
+      "m"
+    ],
+    [
+      0.221026,
+      "k"
+    ],
+    [
+      0.135867,
+      "d"
+    ],
+    [
+      0.118812,
+      "i"
+    ],
+    [
+      0.103927,
+      "r"
+    ],
+    [
+      0.116737,
+      " "
+    ],
+    [
+      1.011690,
+      "/"
+    ],
+    [
+      0.329282,
+      "u"
+    ],
+    [
+      0.043367,
+      "s"
+    ],
+    [
+      0.118403,
+      "r"
+    ],
+    [
+      0.125485,
+      "e"
+    ],
+    [
+      0.283868,
+      "\u0008 \u0008"
+    ],
+    [
+      0.130214,
+      "\u0008 \u0008"
+    ],
+    [
+      0.053902,
+      "e"
+    ],
+    [
+      0.040615,
+      "r"
+    ],
+    [
+      0.248451,
+      "\u001b[?1l\u001b\u003e\r\r\n\u001b[J\u001b]2;../bin/hdfs dfs -mkdir /user\u0007\u001b]1;../bin/hdfs\u0007"
+    ],
+    [
+      2.089943,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.008007,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m "
+    ],
+    [
+      0.000013,
+      "\u001b[K"
+    ],
+    [
+      0.000051,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      0.822630,
+      "../bin/hdfs dfs -mkdir /user"
+    ],
+    [
+      0.740888,
+      "."
+    ],
+    [
+      0.579597,
+      "\u0008 \u0008"
+    ],
+    [
+      0.356173,
+      "/"
+    ],
+    [
+      0.299261,
+      "h"
+    ],
+    [
+      0.054391,
+      "u"
+    ],
+    [
+      0.197558,
+      "g"
+    ],
+    [
+      0.112672,
+      "o"
+    ],
+    [
+      0.508118,
+      "\u001b[?1l\u001b\u003e\r\r\n\u001b]2;../bin/hdfs dfs -mkdir /user/hugo\u0007\u001b]1;../bin/hdfs\u0007"
+    ],
+    [
+      2.026499,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.008482,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m "
+    ],
+    [
+      0.000023,
+      "\u001b[K"
+    ],
+    [
+      0.000130,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      1.041005,
+      "."
+    ],
+    [
+      0.116596,
+      "\u0008.."
+    ],
+    [
+      0.161822,
+      "/"
+    ],
+    [
+      0.973834,
+      "b"
+    ],
+    [
+      0.123808,
+      "i"
+    ],
+    [
+      0.080716,
+      "n"
+    ],
+    [
+      0.725144,
+      "/"
+    ],
+    [
+      0.349495,
+      "h"
+    ],
+    [
+      0.076459,
+      "a"
+    ],
+    [
+      0.116747,
+      "d"
+    ],
+    [
+      0.089971,
+      "o"
+    ],
+    [
+      0.134645,
+      "o"
+    ],
+    [
+      0.160754,
+      "p"
+    ],
+    [
+      0.249392,
+      " "
+    ],
+    [
+      0.405593,
+      "j"
+    ],
+    [
+      0.045698,
+      "a"
+    ],
+    [
+      0.102502,
+      "r"
+    ],
+    [
+      0.306729,
+      " "
+    ],
+    [
+      0.673048,
+      "1"
+    ],
+    [
+      0.081231,
+      "2"
+    ],
+    [
+      0.099091,
+      "3"
+    ],
+    [
+      0.745176,
+      "\u0008 \u0008"
+    ],
+    [
+      0.405598,
+      "3"
+    ],
+    [
+      0.184907,
+      "\u0007"
+    ],
+    [
+      0.624179,
+      "\u0008 \u0008"
+    ],
+    [
+      0.146473,
+      "\u0008 \u0008"
+    ],
+    [
+      0.166955,
+      "3264.jar\u001b[1m \u001b[0m"
+    ],
+    [
+      2.232097,
+      "\u0008\u001b[0m I"
+    ],
+    [
+      0.112745,
+      "S"
+    ],
+    [
+      0.190898,
+      "\u0008ssue13264."
+    ],
+    [
+      0.436639,
+      "\u0008 \u0008"
+    ],
+    [
+      1.031911,
+      "\u001b[?1l\u001b\u003e\r\r\n\u001b]2;../bin/hadoop jar 13264.jar Issue13264\u0007\u001b]1;../bin/hadoop\u0007"
+    ],
+    [
+      2.279916,
+      "THIS SHOULD BE EMPTY: {}"
+    ],
+    [
+      0.435296,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.008012,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m "
+    ],
+    [
+      0.000014,
+      "\u001b[K"
+    ],
+    [
+      0.000109,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      1.882323,
+      "."
+    ],
+    [
+      0.111504,
+      "\u0008.."
+    ],
+    [
+      0.162596,
+      "/"
+    ],
+    [
+      0.678164,
+      "s"
+    ],
+    [
+      0.112440,
+      "b"
+    ],
+    [
+      0.094625,
+      "i"
+    ],
+    [
+      0.102995,
+      "n"
+    ],
+    [
+      0.580019,
+      "\u001b[1m/\u001b[0m"
+    ],
+    [
+      0.671262,
+      "\u0008\u001b[0m/s"
+    ],
+    [
+      0.226453,
+      "t"
+    ],
+    [
+      0.324245,
+      "o"
+    ],
+    [
+      0.089948,
+      "p"
+    ],
+    [
+      0.073497,
+      "-"
+    ],
+    [
+      1.033869,
+      "d"
+    ],
+    [
+      0.178322,
+      "f"
+    ],
+    [
+      0.067472,
+      "s"
+    ],
+    [
+      0.381856,
+      "."
+    ],
+    [
+      1.306006,
+      "s"
+    ],
+    [
+      0.251918,
+      "h\u001b[1m \u001b[0m"
+    ],
+    [
+      1.977717,
+      "\u0008\u001b[0m \u0008\u001b[?1l\u001b\u003e\r\r\n\u001b]2;../sbin/stop-dfs.sh\u0007\u001b]1;../sbin/stop-dfs.sh\u0007"
+    ],
+    [
+      1.062401,
+      "Stopping namenodes on [localhost]\r\n"
+    ],
+    [
+      0.190041,
+      "localhost: stopping namenode\r\n"
+    ],
+    [
+      5.231431,
+      "localhost: stopping datanode\r\n"
+    ],
+    [
+      6.034675,
+      "Stopping secondary namenodes [0.0.0.0]\r\n"
+    ],
+    [
+      0.209799,
+      "0.0.0.0: stopping secondarynamenode\r\n"
+    ],
+    [
+      6.872026,
+      "\u001b[1m\u001b[7m%\u001b[27m\u001b[1m\u001b[0m                                                                                                           \r \r"
+    ],
+    [
+      0.000100,
+      "\u001b]2;hugo@localhost: ~/workspace/hadoop/MapReduce\u0007"
+    ],
+    [
+      0.000028,
+      "\u001b]1;..oop/MapReduce\u0007"
+    ],
+    [
+      0.003698,
+      "\r\u001b[0m\u001b[27m\u001b[24m\u001b[J\u001b[01;32m➜  \u001b[36mMapReduce\u001b[00m "
+    ],
+    [
+      0.000007,
+      "\u001b[K"
+    ],
+    [
+      0.000054,
+      "\u001b[?1h\u001b="
+    ],
+    [
+      3.417637,
+      "\r\r\nzsh: failed to write history file /home/hugo/.zsh_history: permission denied\r\n"
+    ]
+  ]
+}
